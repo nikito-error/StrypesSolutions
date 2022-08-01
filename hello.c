@@ -1,5 +1,8 @@
 #include<stdio.h>
 int main(){
-printf("Hello World p\n");
-return 0;
+    int num;
+    scanf("%d",&num);
+    printf("Num = %d {stdout} \n",num);
+    fprintf(stderr,"Num =%d {stderr}\n",num);
+    return 0;
 }
