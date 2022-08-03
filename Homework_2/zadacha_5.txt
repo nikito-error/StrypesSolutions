@@ -1,0 +1,7 @@
+
+Printing max number
+cat numbersz5.txt | sort -r | head -n 1
+
+
+Printing min number
+cat numbersz5.txt | sort -n | head -n 1
