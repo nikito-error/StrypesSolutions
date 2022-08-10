@@ -3,6 +3,9 @@
         "stdio.h": "c",
         "random": "c",
         "limits": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "stdint.h": "c",
+        "stdlib.h": "c",
+        "inttypes.h": "c"
     }
 }
