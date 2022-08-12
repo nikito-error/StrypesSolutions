@@ -12,6 +12,8 @@ int main(){
             printf("%.2lf\n",number1*number2);
         }else if(c=='/'){
             printf("%.2lf\n",number1/number2);
+        }else{
+            printf("Invalid operation\n");
         }
     }
 
