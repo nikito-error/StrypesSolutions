@@ -8,6 +8,7 @@
         "stdlib.h": "c",
         "inttypes.h": "c",
         "string.h": "c",
-        "kernel.h": "c"
+        "kernel.h": "c",
+        "swap.h": "c"
     }
 }

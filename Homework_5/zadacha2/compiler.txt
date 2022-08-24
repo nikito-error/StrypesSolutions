@@ -1,0 +1,25 @@
+1.connect to files to exe file 
+ggc swap.c program.c -o program
+./program 
+
+gcc -E swap.c -o swap.i 
+gcc -S swap.i -o swap.s 
+gcc -c swap.s -o swap.o
+ghex swap.i 
+ghex swap.s 
+objdump -s swap.o
+
+gcc -E program.c -o program.i 
+gcc -S program.i -o program.s 
+gcc -c program.s -o program.o
+readelf -a program
+ghex program.i 
+ghex program.s 
+objdump -s program.o
+
+gcc swap.o program.o -o program
+./program
+
+create header file swap.h and compile=
+gcc swap.c program.c -o program 
+./program
