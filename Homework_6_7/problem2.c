@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<string.h>
 void Reverse(char *ptr){
 char *end=ptr;
 char tmp;
