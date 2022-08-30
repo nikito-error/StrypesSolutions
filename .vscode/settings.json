@@ -9,6 +9,7 @@
         "inttypes.h": "c",
         "string.h": "c",
         "kernel.h": "c",
-        "swap.h": "c"
+        "swap.h": "c",
+        "string": "c"
     }
 }
