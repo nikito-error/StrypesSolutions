@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-void VMirror(char *pImage){
-char *end=pImage;
+void VMirror(unsigned char *pImage);
+void VMirror(unsigned char *pImage){
+unsigned char *end=pImage;
 char tmp;
 if(pImage){
     while(*end){
@@ -24,7 +25,7 @@ int main()
     int hexa_number = 0;
     unsigned num_bits = 8;
     unsigned bitmask = 1 << (num_bits - 1);
-    printf("Initial content: ");
+    printf("No:%d Initial content:",i+1);
     scanf("%i", &hexa_number);
 
     unsigned k = 0;
@@ -42,7 +43,7 @@ int main()
     
         }
     }
-    VMirror(arr);
+    VMirror((unsigned char*)arr);
     char*bin=0,*a=0;
     bin=arr;
     a=bin;
