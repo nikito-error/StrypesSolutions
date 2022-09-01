@@ -1,6 +1,6 @@
-#include<stdio.h>
+#include <stdio.h>
 
-void Bubble(int *pArray,unsigned int uLen);
+void Bubble(int *pArray, unsigned int uLen);
 void swap(int *xp, int *yp);
 void swap(int *xp, int *yp)
 {
@@ -8,34 +8,37 @@ void swap(int *xp, int *yp)
     *xp = *yp;
     *yp = temp;
 }
-void Bubble(int *pArray,unsigned int uLen){
-int i, j;
-   for (i = 0; i < uLen-1; i++)
-   {
-     for (j = 0; j < uLen-i-1; j++)
-     {
-        if (pArray[j] > pArray[j+1])
+void Bubble(int *pArray, unsigned int uLen)
+{
+    int i, j;
+    for (i = 0; i < uLen - 1; i++)
+    {
+        for (j = 0; j < uLen - i - 1; j++)
         {
-           swap(&pArray[j], &pArray[j+1]);
+            if (pArray[j] > pArray[j + 1])
+            {
+                swap(&pArray[j], &pArray[j + 1]);
+            }
         }
-     }
- 
+    }
 }
-}
-int main(){
+int main()
+{
     unsigned int n;
     printf("Input size of array: ");
-    scanf("%u",&n);
+    scanf("%u", &n);
     putchar('\n');
     int arr[n];
     printf("Add elements of array:\n");
-    for(int i=0;i<n;i++){
-        scanf("%d",&arr[i]);
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
     }
-    Bubble(arr,n);
+    Bubble(arr, n);
     printf("Bubble sorted Array:\n");
-    for(int i=0;i<n;i++){
-        printf("%d ",arr[i]);
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", arr[i]);
     }
     return 0;
 }
