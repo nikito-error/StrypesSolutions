@@ -73,8 +73,8 @@ void Reverse(char *ptr)
 }
 int main()
 {
-    char arr[10] = "";
-    VMirror((unsigned char *)arr);
+    unsigned char arr[10] = "";
+    VMirror(arr);
     return 0;
 }
 
