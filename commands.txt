@@ -1,0 +1,445 @@
+
+									Занятие №1
+
+pwd - home directory
+ls -list of all directories and files in home;
+cd - go to new directory cd + name directory;
+cd .. - go back; .. parent directory - edna direktoriq nazad
+ tek direktory .
+cd = cd ~
+clear = ctr+l - clear terminal
+mkdir - създаване на директорията
+rmdir - трие директория
+rm - r - трие ако директорията не е празна
+man + name of coomand = показва бонус инфо за директорията
+komanda + -- help
+komanda + info
+date -текущата data
+cal - kalendara
+cal - 3 - kalendara s 3 meseca nazad
+sudo - kato super potrebitel
+sudo mkdir dir1 ako e permission denied se slaga sudo
+sudo apt 
+gcc -- za kompilirane
+mkdir MyPrograms
+gedit hello.c
+ls
+kompilirane na programa
+gcc hello.c
+ls
+./a.out
+
+gcc hello.c -o hello 
+./hello
+
+
+ctrl+shift+c = linux copy
+ctrl+shift+v = linux paste
+trash-empty za chistete na koshcheto
+
+
+
+
+code. otvarq visual studio code
+echo $? vrushta posledniq return code
+
+
+repository + remote add ____
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/nikito-error/da.git
+git push -u origin main
+git pull --rebase
+
+/*
+git add .
+git commit -m "add"
+git push -f origin main 
+*/ za da si updatena repositorito s branch main;
+git remove remote
+
+https://itsfoss.com/install-ubuntu-1404-dual-boot-mode-windows-8-81-uefi/ - dual boot link 
+
+
+https://www.youtube.com/c/CodeVault/playlists - link kum C - tutorials
+https://www.youtube.com/c/JacobSorber/playlists - link kum C -tutorials
+!!!!!!!! ako ne moga da vlqza v git da comitna sled 30 dena shte mi e expired personal tokena i trqbva nov 
+elf - executable linkable format
+
+
+
+									Занятие №2
+
+echo - изпечатване на текст в терминала
+cat  - izkarva informaciqta ot faila
+apropos Concatenate - pokazva nalichni concatenate funkcii
+ako vlezem v man ima / i moje da tursim po dumi s naklonenata 
+s klavisha n otivame na sledvashtoto sreshtane
+wc komandata pokazva broq na redovete na dumite i baitovete
+wc -c broq na redovete na faila izkarva broq 
+wc -w broq na dumite 
+wc -l broq na novite redove
+mv - premestvane na fail ili preimenuvane na fail
+cp - copira file ili filove
+cat - moje da se izpolzva i za nqkolko fail koito shte se konkatenirat slepqt i shte se izpishat na ekrana 
+rm - trie fail sus * vsi4ki failove s 0 ili poveche
+touch - suzdava fileove
+rm test? - iztriva s edin simvol sled tova 
+rm test* - vsi4ki filove koito zapochvat s test iztriva
+~ - zamestva home direktoriqta
+
+cp -i backup/* backup2/ -copira ot backup v backup 2
+rm -r -iztriva direktorite i failove koito iskame
+cp * backup - kopira vsi4ko v backup
+grep - za tursene na tekst vuv file ili ot terminala
+grep Hello <filename> -  tursim v duma vuv file
+rm -r * - iztri vsi4ki danni
+
+
+								Занятие №3
+
+
+
+stdin - стандартен вход
+stdout - стандартен изход
+stderrоr - стандартен ерор
+program and proccess - програмата става процес когато е стартирана и се изпълнява от операционната система
+Redirection - пренасочване
+prog > file s edna strelka se prezapisva novi danni vuv file demek overrite
+a s prog >> file s dve strelki ostavat starite danni a tuk e append
+tova prenasochva stdout;
+
+stderr
+prog 2> file1 - tova prezapisva standartniq izhod za greshka
+
+cat file1 - prochite dannite ot file 
+
+stdin prog < file2 chete ot file 
+
+&> (stdout / stderror) - ednovremmenno gi prenasochva overwrite
+&>> append 
+
+pipeline - конвейер стандартните изходи се свързват с на други програми стандартните входове
+cat nums | sort -n  sortira s konveier chislata ot fail i gi izkarva ot cat
+cat nums | head -n 3 izkarva purvite 3 
+cat nums | tail -n 2 izkarva poslednite 2 
+cat nums | sort -n | tail -n 1 
+cat nums | sort -n -r reverse  sortira gi v obraten red
+
+| stout - >stdin
+&| stdout    ->stdin
+   stderr  
+
+info + command = podrobna infromaciq svurzana s komandata
+/dev/null - > black hole - 4ernata dupka
+kakvoto i da zapisha v tozi file moje da ne go vidim
+
+В Unix всичко е file, a ако не е file е процес
+
+data bus - шина за данни
+адреса се задава на адресна шина
+control bus -rw режима на паметта
+
+
+
+							Занятие №4
+fabs(num1,num2)<EPS*fmax(num1,num2);
+-lm за math.h
+gcc compare.c -ln 
+__DBL_EPSILON__ - за дефиниран epsilon
+%lf- double
+%.2lf
+./sum < nums
+cat nums | ./sum
+cat ./sum < nums | sort -n | tail -n3
+
+
+							Занятие №5
+
+
+							Занятие №6
+a<<n = a * 2^n;
+a>>n =  a / 2^n;
+
+маски 
+--- set a bit
+mask = mask | (1<<bit);
+1<<6
+  10110100  
+| 01000000  1<<6
+________
+= 11110100
+
+ --- clear a bit // chistene na bit
+mask= mask & ~(1<<bit);
+  01001101
+~ 00001000
+& 11110111
+= 01000101
+
+- -- check bit  // proverka za bit
+mask = mask & (1<<bit);
+  10101101
+& 00100000
+
+za 0 ili 1 
+(mask & (1<<bit))>>bit
+!!(mask & (1<<bit))
+
+ --- flip bit //oburnat bit
+mask=mask^(1<<bit)
+mask^=(1<<bit)
+ 10110101
+^01000000
+ 11110101
+
+chetno nechetno
+num & 1 togava e nechetno
+num & 0 togava e chetno 
+
+ps-A programite v pametta
+указатели
+pointera ako e 32bit arhitektura e 4 b
+		64 bit - 8b
+
+ako podadem adres na funkciq togava se promenq stoinostta v maina ako e izvikana
+
+https://www.youtube.com/playlist?list=PLiwt1iVUib9s2Uo5BeYmwkDFUh70fJPxX -virtual memory youtube
+
+
+
+							Занятие №7
+
+							Указатели #2(Pointers)
+
+64bit - > 1ULL;
+adress arithmetic ako e p-- na int 
+ p-=4  vadi ot adres sizeof(int) * p;
+ptr +- n * sizeof(type);
+arrays - posledovatelni podredeni elementi ot edin i sushti tip
+указател към първият елемент е името на масива
+
+
+		
+								Занятие №8
+							Символни низове
+
+arr + i == &arr[i]
+
+*arr+i	== arr[0]+i
+
+int arr[10]; 
+arr[12] ? => garbage value || segment fault;
+
+ptr+- n * sizeof(type);
+
+char sym='Z';
+'\0' krai na stringa
+
+char *str2 = "Hello" read only string
+array can change but that cant;
+
+strcmp(str,str2)  vrushta 0 kogato sa ravni 
+str <srt2 vrushta <0 
+ako e >0 str>str2;
+
+strcmp izvajda i asci codovete na bukvi i drugi;
+fgets e po-dobur variant na getline 
+fgets[str,200,stdin];
+str[strlen(str)-1]='\0';
+stdlib convert number;
+function atoi from string to int 
+za int = atoi;
+za double=atof;
+sscanf() <- string convert string to int ili drugi;
+sprintf() 
+
+sscanf(string,"%d",&n); - za int
+printf("n=%d\n",n);
+
+sscanf(string2,"%lf",&n); - za double
+
+readelf chetem programa
+gcc -E samo preprocessor opciq 
+
+
+preprocessor - compiler  - assembler -  linker  - a.out - > louder  - > process
+
+dynamic library sa kum loudera otivat 
+linkera sa statichni biblioteki
+pod linkera imame biblioteki koito otivat kum nego lib ili -a 
+
+
+
+							Занятие №9
+							Препроцесор
+
+
+gcc -E main.c -o main.i не влизаме в компилатора а в началото на препроцесора
+asembler  gcc -S main.i -o main.s
+object code gcc -c main.s -o main.o
+
+излизат от хедърните файлове и програмата
+cpp main.c  cpreprocessor zapisvane na preprocessor code
+mv myfile /usr/include - move file to another location
+#include " " vzima file po path
+#include < > vzima file ot /usr/include
+
+#define pi 3.14
+#undef pi remove define and can be redefined 
+
+\ - tazi naklonena cherta pozvolqva na macrosa da se premesti na nov red 
+
+gcc count.c -D COUNT=5 -o count -  stoinost na makros ot vhoda na terminala
+gcc count.c -D COUNT=5 -D TEXT ='"Strypes"' -o count
+
+Директиви за условно компилиране 
+#if
+#elif
+#else 
+и други
+
+#ifdef - ako e definirano
+#ifndef - ako ne e definirano
+
+#if defined(N) && defined(M)
+#endif
+objdump can read an object code
+ghex  read an object code
+elf file can read with readelf ili pak ghex
+strace sitemni izvikvaniq 
+strace ./myprog
+insmod insert mod in kernel
+rmmod delete mod from kernel
+
+							Занятие №10
+
+User space
+Kernel space
+system call interface between user space and kernel space
+man 2 write system call information about write
+for system call is 2 number of man man
+/dev/null - 4erna dupka(black hole)
+kernel development - kerner modules - 
+kerner moules - obekten file s razshirenie .ko kernel object
+mojem da go vmuknem v qdroto 
+dmesg | tail poslednite redove
+make create kernel files 
+lsmod 
+lsmod | less bonus program less with up and down and q for out 
+sudo insmod mymodule.ko
+lsmod | grep mymod 
+dmesg | tail 
+ls -l /dev/null
+sudo mknod testdev c 506 0
+head -n 1 /dev/testdev
+
+						- Динамична памет /heap/
+в С - > освобождаваме сами паметта
+#include<stdlib.h>
+malloc(byts) -
+calloc() - занулява същото като malloc
+realloc() - промяна на размера
+free() 
+						
+							Занятие №11
+
+
+heap(динамична памет) - > malloc(),calloc(),realloc(),free();
+stack(стекова памет) sp-> osvobojda otgore nadolu ili obratno 
+int a = 10; 
+{
+	int a= 20;
+	{ 
+		int a=30;
+	}
+}
+
+
+v stek - nai otdolu a =10; kogato otvorim noviqt block i a=20 , to se zapisva nad nego
+i taka natuk a=30;
+nad stekoviqt pointer pametta e svobodna i ako pipame tam shte izelze segmentation fault
+a=30 <- stack pointer 
+a=20
+a=10
+kogato slojim zatvarqshta skoba } stekoviqt pointer sliza nadolu;
+a=30 pri purvata } zadraskvame 
+a=20 <-stack pointer pri vtorata } zadraskavem i stekoviqt sliza nadolu
+a=10  
+
+auto - zapazena kluchova duma v ezika;
+po default vsi4ki promenlivi sa auto;
+v Unix pametta narastva nadolu;
+void * universal pointer who can store everything but cant be derefence and address arithmetic 
+
+						
+							Занятие №12
+
+"   " na argumenta i stava 1 
+./prog C strypes "Solution hello"
+echo $PWD 
+echo $SHELL
+echo $HOME
+echo $USER
+ls -a vsi4ki filove + scriti 
+ls -l //long version
+ls -h // preverushta v kilobyte i drugi po chetlivo
+ls -lah // trite zaedno opciii 
+char * env[] sled dvata argumenta 
+int i =0;
+while(env[i]!=NULL){
+printf("env[%d]= %s\n",i,env[i]);
+i++;
+}
+printf("I'm %s\n",getenv["Username"]);
+printf("My directory:%s\n",getenv["PWD"]);
+
+//otdelno drugo
+void printNum(int num,int (*f){int}){
+printf("%d\n",f(num));
+}
+int doubleMe(int n){
+return 2*n;
+}
+int main(){
+printNum(15),doubleMe);
+}
+
+//drugo za pointers
+int sum(int a,int b){
+return a+b;
+}
+
+int (*fp) (int,int);
+fp=sum;
+printf("%d\n",fp(10,20));
+
+
+
+						Занятие Final
+						7.09.2022;
+Linked list - Свързан Списък
+GDB;
+* head - > pointer kum purvat kutiika
+NULL -> poslednata kutiika pointer kum poslednata
+data|next  -> data|next ->....
+node
+heap;
+Последователен достъп 
+gcc -g test.c само за дебъгаване подготвя файла в началото се използва само -g
+gdb a.out  - gdb и името на изходния файл
+c - continue 
+run - izpulnenie
+q - exit
+break 16 slaga breakpoint na red 16 
+print а - izkarva stoinostta na promenlivata
+next - ako iskam stupka napred
+continue - продължава програмата
+break function - breakva do funkciqta
+step to function - vliza vuv funkciq
+JTAG debugger - za drugi ustroista ako debugvame na razlichni harduerni sistemi;
+adb
+android debug bridge //version 1.0.39;
