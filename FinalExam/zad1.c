@@ -1,16 +1,23 @@
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include<time.h>
+#include <time.h>
+#include "zad1.h"
+// main class
+// gcc zad1.c zad1funcs.c -o zad1
+//./zad1
+
 int findRandom(int min, int max)
 {
-    return min + rand() % (max+1 - min);
+    return min + rand() % (max + 1 - min);
 }
-int main(){
-     srand(time(NULL));
-    int n,m,k;
-    char arr[7]={'!','?','$','@','*','%','-'};
+
+int main()
+{
+    srand(time(NULL));
+    int n, m, k;
+    char arr[7] = {'!', '?', '$', '@', '*', '%', '-'};
     printf("Enter n:");
-    scanf("%d",&n);
+    scanf("%d", &n);
     char *num = (char *)malloc(n * sizeof(char));
     if (NULL == num)
     {
@@ -31,26 +38,34 @@ int main(){
     }
     for (int i = n; i < n + m; i++)
     {
-        num[i] = findRandom('A','Z');
+        num[i] = findRandom('A', 'Z');
     }
-     printf("Enter k:");
+    printf("Enter k:");
     scanf("%d", &k);
-     num = (char *)realloc(num, (n + m+k) * sizeof(char));
+    num = (char *)realloc(num, (n + m + k) * sizeof(char));
     if (NULL == num)
     {
         fprintf(stderr, "realloc error!");
         return 1;
     }
-    int RandIndex=rand()%7;
-    for (int i = n+m; i < n + m+k; i++)
+    for (int i = n + m; i < n + m + k; i++)
     {
-        num[i] = findRandom('A','Z');
+        int RandIndex = rand() % 7;
+        num[i] = arr[RandIndex];
     }
-    printf("Aray of elements:\n");
-    for (int i = 0; i < n + m + k; i++)
+    num = (char *)realloc(num, (n + m + k + 1) * sizeof(char));
+    if (NULL == num)
     {
-        printf("%c", num[i]);
+        fprintf(stderr, "realloc error!");
+        return 1;
     }
-    putchar('\n');
+    for (int i = n + m + k; i < n + m + k + 1; i++)
+    {
+        num[i] = '\0';
+    }
+    printElements(num, n + m + k + 1);
+    printf("Count lower cases = %d\n", CountlowerCase(num, n + m + k + 1));
+    printf("Count most freq char = %c\n", mostFrequency(num, n + m + k + 1));
+    free(num);
     return 0;
 }
